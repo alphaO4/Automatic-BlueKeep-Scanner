@@ -1,9 +1,11 @@
 import requests
 import shodan
+import os
 
 requests.packages.urllib3.disable_warnings()
 
-API_KEY = "SHODAN API KEY"
+API_KEY = os.environ.get('SHODAN_API_KEY')
+
 
 SEARCH_FOR = 'vuln:"cve-2019-0708" country:DE'
 f = open("urls.txt", "a")
